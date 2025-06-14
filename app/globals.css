@@ -1,8 +1,99 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: 'ClashDisplay-thin';
+  src: url('/fonts/ClashDisplay/ClashDisplay-Extralight.woff2') format('woff2');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ClashDisplay-light';
+  src: url('/fonts/ClashDisplay/ClashDisplay-Light.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ClashDisplay-regular';
+  src: url('/fonts/ClashDisplay/ClashDisplay-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ClashDisplay-medium';
+  src: url('/fonts/ClashDisplay/ClashDisplay-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ClashDisplay-semibold';
+  src: url('/fonts/ClashDisplay/ClashDisplay-Semibold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ClashDisplay-bold';
+  src: url('/fonts/ClashDisplay/ClashDisplay-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ClashDisplay-extrabold';
+  src: url('/fonts/ClashDisplay/ClashDisplay-Extrabold.woff2') format('woff2');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ClashDisplay-heavy';
+  src: url('/fonts/ClashDisplay/ClashDisplay-Heavy.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi-light';
+  src: url('/fonts/Satoshi/Satoshi-Light.woff2') format('woff2');
+  font-weight: 200;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi-regular';
+  src: url('/fonts/Satoshi/Satoshi-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi-medium';
+  src: url('/fonts/Satoshi/Satoshi-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi-bold';
+  src: url('/fonts/Satoshi/Satoshi-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi-heavy';
+  src: url('/fonts/Satoshi/Satoshi-Heavy.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #000;
+  --foreground: #fff;
 }
 
 @theme inline {
@@ -14,13 +105,459 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #000;
+    --foreground: #fff;
   }
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Satoshi-regular', sans-serif;
+  position: relative;
+  overflow-x: hidden;
 }
+
+.container {
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+a {
+  transition: 0.3s;
+  /* text-decoration: none; */
+}
+
+a:hover,
+.activeLink {
+  color: #00BCD4;
+}
+
+.main-hero {
+  padding: 40px 0;
+}
+
+.page-title {
+  font-family: 'ClashDisplay-medium';
+  font-size: 80px;
+}
+
+.flex-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.leftSide,
+.rightSide {
+  width: 50%;
+  padding: 0 20px 0 0;
+}
+
+.rightSide{
+  padding: 0 0 0 20px;
+}
+
+.subtitle {
+  font-size: 20px;
+}
+
+.main {
+  position: relative;
+  z-index: 2;
+}
+
+.social {
+  font-size: 56px;
+}
+
+.main-hero .rightSide {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  column-gap: 20px;
+  width: 30%;
+  position: relative;
+  /* z-index: 9; */
+}
+
+.main-hero .flexContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.main-hero .leftSide {
+  width: 67%;
+}
+
+.logo {
+  position: relative;
+  /* z-index: 99999; */
+}
+
+.logoLink {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 20px;
+  position: relative;
+  /* z-index: 999; */
+}
+
+.logoTitle {
+  font-size: 32px;
+  font-family: 'ClashDisplay-semibold';
+}
+
+.logoLink:hover {
+  color: #fff !important;
+}
+
+.logoImage {
+  width: 60px;
+  height: 60px;
+}
+
+.logoImage img {
+  width: 100%;
+  height: 100%;
+}
+
+.logo {
+  padding: 15px 0;
+  position: fixed;
+  width: 100%;
+  height: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-bottom: 2px solid #fff;
+  background-color: #000;
+  z-index: 9;
+}
+
+.controls {
+  /* z-index: 9999; */
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  right: 5px;
+  bottom: 50px;
+  display: none;
+}
+
+.menuIcon {
+  background-color: #fff;
+  padding: 10px;
+  color: #000 !important;
+  border-radius: 50%;
+}
+
+.menuIcon svg {
+  color: #000 !important;
+}
+
+.main {
+  top: 100px;
+  position: relative
+}
+
+.leftNavigation a,
+.RightNavigation a {
+  text-transform: uppercase;
+  margin: 0 10px;
+  position: relative;
+  font-size: 18px;
+}
+
+.leftNavigation a+a::before,
+.RightNavigation a+a::before {
+  content: ".";
+  font-size: 48px;
+  line-height: 0;
+  position: relative;
+  top: -4px;
+  margin-right: 15px;
+  color: #00BCD4;
+}
+
+.leftNavigation nav::before,
+.RightNavigation nav::before,
+.RightNavigation nav::after,
+.leftNavigation nav::after {
+  content: "";
+  width: calc(50% - 178px);
+  height: 2px;
+  display: block;
+  background-color: #00BCD4;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.RightNavigation,
+.leftNavigation {
+  z-index: 11;
+  position: fixed;
+  top: 0;
+  right: -95vh;
+  transform: rotate(270deg);
+  width: 110vh;
+  height: 100vh;
+}
+
+.RightNavigation nav,
+.leftNavigation nav {
+  transform: rotate(180deg);
+}
+
+.RightNavigation {
+  right: unset;
+  left: -95vh;
+  transform: rotate(90deg);
+}
+
+
+.RightNavigation nav::after,
+.leftNavigation nav::after {
+  right: 0;
+}
+
+nav {
+  text-align: center;
+  position: relative;
+}
+
+.navbar {
+  background: #000;
+  padding: 20px;
+  color: #fff;
+  position: relative;
+}
+
+.menuIcon {
+  display: block;
+  cursor: pointer;
+  /* z-index: 12; */
+  position: absolute;
+  right: 20px;
+  top: 25px;
+}
+
+.navMobile {
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  position: fixed;
+  background-color: #000;
+  top: 92px;
+  border-top: 1px solid #fff;
+  padding-top: 20px;
+  /* z-index: 11; */
+  transition: 0.3s ease;
+}
+
+.navMobile.active {
+  height: calc(100vh - 92px);
+  z-index: 9;
+}
+
+
+.navMobile a {
+  display: block;
+  padding: 20px 0;
+  text-align: left;
+}
+
+.navMobile a+a {
+  border-top: 1px solid #00BCD4;
+}
+
+.auraA {
+  color: #00BCD4;
+}
+
+
+.formContact input,
+.formContact textarea {
+  border: 2px solid #fff;
+  border-radius: 7px;
+  padding: 10px 20px;
+  display: block;
+  width: 100%;
+  outline: none;
+  transition: 0.3s;
+  margin: 10px 0;
+}
+
+.formContact textarea{
+  height: 150px;
+}
+.formContact input:focus,
+.formContact textarea:focus,
+.formContact input:hover,
+.formContact textarea:hover {
+  border-color: #00BCD4;
+}
+.inputGroup {
+  position: relative;
+  margin-top: 25px;
+}
+
+
+.inputLabel {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  color: #fff;
+  pointer-events: none;
+  transition: 0.2s ease all;
+  background-color: #000;
+  padding: 0 10px;
+}
+
+.formInput:focus~.inputLabel,
+.formInput:not(:placeholder-shown)~.inputLabel {
+  top: -12px;
+  font-size: 14px;
+  color: #00BCD4;
+}
+input:-webkit-autofill,
+textarea:-webkit-autofill {
+  box-shadow: 0 0 0px 1000px #000 inset !important; 
+  -webkit-text-fill-color: #fff !important;
+  transition: background-color 5000s ease-in-out 0s; 
+}
+.headingEntry{
+  color: #00BCD4;
+  font-size: 37px;
+  font-family: 'ClashDisplay-medium';
+}
+.paraEntry{
+  font-size: 18px;
+}
+.mainInfo{
+  margin: 40px 0;
+}
+.info .icon {
+    color: #fff;
+    background-color: #00BCD4;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 24px;
+}
+.info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+.info + .info{
+    margin-top: 30px;
+}
+.information{
+    width: calc(100% - 90px);
+}
+h4.headingInfo {
+    font-family: 'ClashDisplay-medium';
+    font-size: 20px;
+}
+
+p.detailInfo {
+    font-size: 17px;
+}
+/* .home .page-title {
+      font-size: 74px;
+}
+.home .subtitle{
+    font-size: 22px;
+} */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 1000px;
+  }
+
+  .RightNavigation,
+  .leftNavigation {
+    width: 105vh;
+  }
+}
+
+@media (max-width: 1100px) {
+  .container {
+    max-width: 880px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .container {
+    max-width: 780px;
+  }
+}
+
+@media (max-width: 991px) {
+  .container {
+    max-width: 680px;
+  }
+
+  .social {
+    font-size: 48px;
+  }
+
+  .page-title {
+    font-size: 60px;
+  }
+
+  .subtitle {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 800px) {
+  .container {
+    max-width: 650px;
+  }
+}
+
+@media (max-width: 767px) {
+  .main-hero .rightSide {
+    column-gap: 10px;
+    width: 100%;
+  }
+
+  .social {
+    font-size: 28px;
+  }
+
+  .page-title {
+    font-size: 36px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+    width: 80%;
+  }
+
+  .main-hero .leftSide {
+    width: 100%;
+  }
+
+  .RightNavigation,
+  .leftNavigation {
+    display: none;
+  }
+
+  .controls {
+    display: block;
+  }
+
+  .main-hero .rightSide {
+    /* z-index: 0; */
+  }
+}
+
