@@ -168,6 +168,9 @@ a:hover,
 .main {
   position: relative;
   z-index: 2;
+  min-height: calc(100vh - 140px);
+  top: 100px;
+  padding-bottom: 100px;
 }
 
 .social {
@@ -262,10 +265,6 @@ a:hover,
   color: #000 !important;
 }
 
-.main {
-  top: 100px;
-  position: relative
-}
 
 .leftNavigation a,
 .RightNavigation a {
@@ -367,7 +366,8 @@ nav {
   height: calc(100vh - 82px);
   z-index: 9;
 }
-body:has(.navMobile.active){
+
+body:has(.navMobile.active) {
   overflow: hidden;
 }
 
@@ -486,6 +486,55 @@ p.detailInfo {
   font-size: 17px;
 }
 
+.footerMain .logo {
+  position: relative;
+  border-bottom: 0;
+}
+
+.footerMain {
+  width: 100%;
+  position: relative;
+  z-index: 9;
+  margin-top: 50px;
+  border-top: 2px solid #fff;
+  background-color: #000;
+}
+
+.footerMain .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footerMain .logoLink {
+  justify-content: flex-start
+}
+
+.footerMain .logo {
+  width: 30%;
+}
+
+.footerMain .copyRight {
+  width: 70%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.footerMain .copyRight p {
+  text-transform: capitalize;
+}
+
+.footerMain .logoImage {
+  width: 45px;
+  height: 45px;
+}
+
+.footerMain .logoTitle {
+  font-size: 26px;
+}
+
 /* .home .page-title {
       font-size: 74px;
 }
@@ -602,6 +651,23 @@ p.detailInfo {
   .logoImage {
     width: 50px;
     height: 50px;
+  }
+
+  .footerMain .logo,
+  .footerMain .copyRight {
+    width: 100%;
+  }
+
+  .footerMain .copyRight p {
+    text-align: center;
+  }
+
+  .footerMain .logoLink , .footerMain .copyRight{
+    justify-content: center;
+  }
+
+  .footerMain {
+    padding-bottom: 20px;
   }
 
   /* .main-hero .rightSide {
