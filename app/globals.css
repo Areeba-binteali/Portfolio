@@ -157,7 +157,7 @@ a:hover,
   padding: 0 20px 0 0;
 }
 
-.rightSide{
+.rightSide {
   padding: 0 0 0 20px;
 }
 
@@ -347,6 +347,7 @@ nav {
   position: absolute;
   right: 20px;
   top: 25px;
+  z-index: 10;
 }
 
 .navMobile {
@@ -355,7 +356,7 @@ nav {
   overflow: hidden;
   position: fixed;
   background-color: #000;
-  top: 92px;
+  top: 82px;
   border-top: 1px solid #fff;
   padding-top: 20px;
   /* z-index: 11; */
@@ -363,10 +364,12 @@ nav {
 }
 
 .navMobile.active {
-  height: calc(100vh - 92px);
+  height: calc(100vh - 82px);
   z-index: 9;
 }
-
+body:has(.navMobile.active){
+  overflow: hidden;
+}
 
 .navMobile a {
   display: block;
@@ -395,15 +398,17 @@ nav {
   margin: 10px 0;
 }
 
-.formContact textarea{
+.formContact textarea {
   height: 150px;
 }
+
 .formContact input:focus,
 .formContact textarea:focus,
 .formContact input:hover,
 .formContact textarea:hover {
   border-color: #00BCD4;
 }
+
 .inputGroup {
   position: relative;
   margin-top: 25px;
@@ -427,50 +432,60 @@ nav {
   font-size: 14px;
   color: #00BCD4;
 }
+
 input:-webkit-autofill,
 textarea:-webkit-autofill {
-  box-shadow: 0 0 0px 1000px #000 inset !important; 
+  box-shadow: 0 0 0px 1000px #000 inset !important;
   -webkit-text-fill-color: #fff !important;
-  transition: background-color 5000s ease-in-out 0s; 
+  transition: background-color 5000s ease-in-out 0s;
 }
-.headingEntry{
+
+.headingEntry {
   color: #00BCD4;
   font-size: 37px;
   font-family: 'ClashDisplay-medium';
 }
-.paraEntry{
+
+.paraEntry {
   font-size: 18px;
 }
-.mainInfo{
+
+.mainInfo {
   margin: 40px 0;
 }
+
 .info .icon {
-    color: #fff;
-    background-color: #00BCD4;
-    padding: 15px;
-    border-radius: 50%;
-    font-size: 24px;
+  color: #fff;
+  background-color: #00BCD4;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 24px;
 }
+
 .info {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
 }
-.info + .info{
-    margin-top: 30px;
+
+.info+.info {
+  margin-top: 30px;
 }
-.information{
-    width: calc(100% - 90px);
+
+.information {
+  width: calc(100% - 90px);
 }
+
 h4.headingInfo {
-    font-family: 'ClashDisplay-medium';
-    font-size: 20px;
+  font-family: 'ClashDisplay-medium';
+  font-size: 20px;
 }
 
 p.detailInfo {
-    font-size: 17px;
+  font-size: 17px;
 }
+
 /* .home .page-title {
       font-size: 74px;
 }
@@ -501,10 +516,6 @@ p.detailInfo {
 }
 
 @media (max-width: 991px) {
-  .container {
-    max-width: 680px;
-  }
-
   .social {
     font-size: 48px;
   }
@@ -516,13 +527,18 @@ p.detailInfo {
   .subtitle {
     font-size: 18px;
   }
-}
 
-@media (max-width: 800px) {
-  .container {
-    max-width: 650px;
+  .RightNavigation,
+  .leftNavigation {
+    display: none;
+  }
+
+  .controls {
+    display: block;
+    z-index: 99;
   }
 }
+
 
 @media (max-width: 767px) {
   .main-hero .rightSide {
@@ -547,17 +563,48 @@ p.detailInfo {
     width: 100%;
   }
 
-  .RightNavigation,
-  .leftNavigation {
-    display: none;
+  .leftSide,
+  .rightSide {
+    width: 100%;
   }
 
-  .controls {
-    display: block;
+  .leftSide,
+  .rightSide {
+    padding: 0;
   }
 
-  .main-hero .rightSide {
-    /* z-index: 0; */
+  .headingEntry {
+    font-size: 26px;
   }
+
+  .paraEntry,
+  p.detailInfo {
+    font-size: 16px;
+  }
+
+  h4.headingInfo {
+    font-size: 18px;
+  }
+
+  .info .icon {
+    font-size: 20px;
+    padding: 12px;
+  }
+
+  .information {
+    width: calc(100% - 70px);
+  }
+
+  .logoTitle {
+    font-size: 28px;
+  }
+
+  .logoImage {
+    width: 50px;
+    height: 50px;
+  }
+
+  /* .main-hero .rightSide {
+    z-index: 0;
+  } */
 }
-
