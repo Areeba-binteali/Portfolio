@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { FaBarsStaggered } from "react-icons/fa6";
 import { IoClose } from "react-icons/io5";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 
 export default function Header() {
@@ -11,6 +11,11 @@ export default function Header() {
   const pathname = usePathname();
 
   const toggleMenu = () => setIsOpen(!isOpen);
+useEffect(() => {
+  if (isOpen) {
+    setIsOpen(false);
+  }
+}, [pathname]);
 
   // Helper function to add "activeLink" class to the current page link
   const activeClass = (href: string) =>
